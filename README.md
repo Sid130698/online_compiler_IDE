@@ -10,9 +10,6 @@ If you use this project in your commercial application, please include the follo
 
 Thank you for using this project!
 
-
-
-# online_compiler_IDE
 # Online Compiler and IDE
 
 ## Project Overview
