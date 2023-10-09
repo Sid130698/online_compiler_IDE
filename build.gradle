@@ -9,7 +9,6 @@ repositories {
 
 application {
     applicationDefaultJvmArgs = ['--main', 'com.siddharth.ide.Application']
-
 }
 
 dependencies {
@@ -19,10 +18,10 @@ dependencies {
 sourceSets {
     main {
         java {
-            srcDirs = ['src'] // Update this with your Java source directory
+            srcDirs = ['src/main/java'] // Java source directory with subfolders
         }
         resources {
-            srcDirs = ['static', 'templates'] // Update with your resource directories
+            srcDirs = ['src/main/resources'] // Resource directory with subfolders
         }
     }
 }
