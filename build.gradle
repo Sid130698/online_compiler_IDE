@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    applicationDefaultJvmArgs = ['--main', 'com.siddharth.ide.Application']
+
+}
+
+dependencies {
+    // Add your dependencies here
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src'] // Update this with your Java source directory
+        }
+        resources {
+            srcDirs = ['static', 'templates'] // Update with your resource directories
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

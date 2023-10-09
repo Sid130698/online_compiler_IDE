@@ -47,16 +47,17 @@
 * Utilized try-catch blocks to handle exceptions and errors gracefully.
 
 
-## Day 3:
+### Day 3:
 
 **Objective**: Implement code execution functionality on the backend (Java).
 
-- Set up a Java project for your backend using Spring Boot.
-- Implement an API endpoint that can receive code from the frontend.
-- Create a service or function for code compilation and execution.
+- Create a Java project for your backend.
+- Implement a simple HTTP server using Java's built-in `HttpServer` or a library like Jetty.
+- Design API endpoints that can receive code from the frontend.
+- Create a service or function for code compilation and execution in Java.
 - Test the backend code execution functionality with sample code snippets.
 
-## Day 4:
+### Day 4:
 
 **Objective**: Complete basic error handling and display code execution results on the frontend.
 
@@ -64,7 +65,7 @@
 - Update the frontend to display code execution output and error messages.
 - Test error handling to ensure proper handling of success and error cases.
 
-## Day 5:
+### Day 5:
 
 **Objective**: User interface improvements.
 
@@ -72,26 +73,74 @@
 - Implement a feature for users to save and load code projects.
 - Test the updated user interface and project management features.
 
-## Day 6:
+### Day 6:
 
 **Objective**: Integration testing and documentation.
 
 - Conduct integration testing to ensure seamless frontend and backend interaction.
 - Document your project, including user guides and developer documentation.
 
-## Day 7 - Day 10:
+### Day 7:
 
 **Objective**: Security, Optimization, and Deployment.
 
-- Implement security measures on the backend to protect against code injection.
-- Optimize your application for performance and scalability.
-- Consider deploying your application to a web server or cloud platform.
+- Strengthen security measures on the backend.
+- Implement input validation and sanitization to protect against code injection.
+- Profile your application to identify performance bottlenecks.
 
-## Day 11 - Day 14:
+### Day 8:
 
-**Objective**: Continuous Improvement and Testing.
+**Objective**: Optimization.
 
-- Gather user feedback and make improvements based on user needs.
-- Perform comprehensive testing to ensure stability and resolve critical bugs.
-- Conduct load testing to assess performance under heavy usage.
-- Make final enhancements and refinements based on feedback and testing.
+- Optimize code execution, especially in the backend.
+- Implement caching mechanisms for frequently used data.
+- Fine-tune database queries if applicable.
+
+### Day 9:
+
+**Objective**: Deployment Preparation.
+
+- Select a deployment environment (e.g., cloud hosting, a dedicated server).
+- Prepare your application for deployment by configuring environment variables.
+- Ensure all dependencies and libraries are up-to-date.
+
+### Day 10:
+
+**Objective**: Deployment.
+
+- Deploy your application to the selected environment.
+- Configure web server settings and firewall rules.
+- Set up continuous integration and continuous deployment (CI/CD) if applicable.
+
+### Day 11:
+
+**Objective**: User Feedback and Refinements.
+
+- Collect user feedback from beta testers or early users.
+- Identify areas for improvement and prioritize enhancements.
+- Implement user-suggested features and refinements.
+
+### Day 12:
+
+**Objective**: Comprehensive Testing.
+
+- Conduct thorough testing of all application features.
+- Perform regression testing to ensure new changes haven't introduced issues.
+- Consider load testing to evaluate how the application handles heavy traffic.
+
+### Day 13:
+
+**Objective**: Performance Evaluation.
+
+- Analyze the application's performance in the production environment.
+- Monitor server resource usage and application response times.
+- Make performance optimizations as needed.
+
+### Day 14:
+
+**Objective**: Final Enhancements and Release.
+
+- Address any remaining bugs or issues.
+- Ensure code is well-documented.
+- Prepare for a formal release if you're planning to make the project public.
+- Celebrate your accomplishments and acknowledge your progress.
