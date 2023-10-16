@@ -1,31 +1,52 @@
 plugins {
-    id 'java'
-    id 'application'
+    id 'war'
+    id 'eclipse-wtp'
+  
 }
 
 repositories {
     mavenCentral()
 }
 
-application {
-    applicationDefaultJvmArgs = ['--main', 'com.siddharth.ide.Application']
-}
-
 dependencies {
-    // Add your dependencies here
+    implementation 'jakarta.platform:jakarta.jakartaee-api:9.1.0'
+    implementation 'jakarta.servlet:jakarta.servlet-api:4.0.3'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.8'
+    // https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core
+implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '10.1.14'
+
+    // Add any additional dependencies you may need here.
 }
 
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src/main/java'] // Java source directory with subfolders
-        }
-        resources {
-            srcDirs = ['src/main/resources'] // Resource directory with subfolders
-        }
+// Configure the Java toolchain to use Java 18.
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(18))
     }
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+war {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE // Specify how to handle duplicates
+    webXml = file('src/main/webapp/WEB-INF/web.xml') // Set the path to your web.xml file.
+    archiveFileName.set('OnlineWebIDE.war') // Set the WAR file name.
 }
+
+eclipse {
+    wtp {
+        component {
+            contextPath = 'my-gradle-web-app' // Set your desired context path.
+        }
+    }
+}
+task cleanBuild {
+    dependsOn 'clean', 'build'
+    description = 'Clean and then build the project'
+}
+task copyWar(type: Copy) {
+    from 'build/libs'
+    include '*.war'
+    into 'D:/Projects_Development/OnlineIDE/apache-tomcat-10.1.14/webapps'
+    description = 'Copy the WAR file to Tomcat webapps directory'
+}
+
+copyWar.dependsOn build 
