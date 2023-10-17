@@ -105,16 +105,28 @@ public class IdeServlet extends HttpServlet {
 
     private String compilePythonCode(String code) {
         try {
-            Process process = Runtime.getRuntime().exec("python -c \"" + code + "\"");
+            // Create a temporary Python file
+            File tempFile = File.createTempFile("temp-python-", ".py");
+            try (PrintWriter writer = new PrintWriter(tempFile)) {
+                writer.write(code);
+            }
+
+            // Execute the Python script from the temporary file
+            Process process = Runtime.getRuntime().exec("python " + tempFile.getAbsolutePath());
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             StringBuilder output = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) {
                 output.append(line).append("\n");
             }
+
+            // Delete the temporary Python file
+            tempFile.delete();
+
             return output.toString();
         } catch (IOException e) {
             return "IOException: " + e.getMessage();
         }
     }
+
 }
