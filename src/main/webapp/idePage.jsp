@@ -31,12 +31,14 @@
           <option value="java">Java</option>
           <option value="python">Python</option>
           <!-- Add more language options as needed -->
+          
         </select>
+        <input type="text" id="classNameInput" placeholder="Enter the class name">
       </div>
       <div id="codeEditor">
         <!-- Your CodeMirror code editor will go here -->
       </div>
-      <button id="compile-button">Compile/Execute</button>
+      <button id="compile-button" onclick="codeCompile()">Compile/Execute</button>
 
       <!-- Output Area -->
       <div id="output-area">

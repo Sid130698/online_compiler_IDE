@@ -34,7 +34,7 @@ war {
 eclipse {
     wtp {
         component {
-            contextPath = 'my-gradle-web-app' // Set your desired context path.
+            contextPath = 'OnlineWebIDE' // Set your desired context path.
         }
     }
 }
